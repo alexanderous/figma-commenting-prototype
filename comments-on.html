@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<link rel="stylesheet" href="main.css">
+	<script src="jquery.js"></script>
+  	<!--script src="main.js"></script-->
+</head>
+
+<body>
+
+
+<div class="background-app">
+	<a href="comments-off.html" class="size"><img class="pen-icon" src="img/pen-active.png"></a>
+
+	<img id="rectangle" src="img/rectangle.png">
+	<img id="comment-bubble" src="img/comment-bubble.png">
+	<img id="rectangle3" src="img/rectangle3.png">
+	<img id="mini-pen-icon" src="img/pen-active.png">
+	<!--img id="comment-bubble2" src="img/comment-bubble.png"-->
+	<div id="comment-area"></div>
+	<!--img id="rectangle2" src="img/rectangle2.png"-->
+
+</div>
+
+
+
+</body>
+
+<script type="text/javascript">
+
+	$("#rectangle").on('click', function() {
+		$("#layer-highlight").detach();
+		$("#comment-form").detach();
+		$("#comment-complete").detach();
+		$("#comment-reply-field").detach();
+		$('#comment-bubble3').detach();
+		$("#comment-area").append('<img id="comment-bubble3" src="img/comment-bubble.png">');
+		$("#comment-area").append('<div id="comment-form">');
+		$("#comment-form").append('<form class="commentable"><input type="text" class="comment-field"></form>');
+		$("#comment-form").append('<button id="button-post">Post</button>');
+
+		$("#button-post").on('click', function() {
+			$("#comment-form").detach();
+			$("#comment-area").append('<div id="comment-complete">');
+			$("#comment-complete").append('<div id="reply-link">');
+
+
+			$("#reply-link").on('click', function() {
+				$("#comment-complete").detach();
+				$("#comment-area").append('<div id="comment-reply-field">');
+	  	    })
+	    })
+
+	});
+
+	$("#comment-area").mouseenter(function() {
+		$(this).append('<img id="comment-bubble2" src="img/comment-bubble.png">');
+	});
+
+	$("#comment-area").mouseleave(function() {
+		$('#comment-bubble2').detach();
+	});
+
+	$("#comment-bubble2").on('click', function() {
+		$("#comment-form").detach();
+		$("#comment-complete").detach();
+		$("#comment-reply-field").detach();
+		$("#comment-area").append('<img id="comment-bubble3" src="img/comment-bubble.png">');
+		$("#layer-highlight").detach();
+		$("#comment-area").append('<div id="comment-form">');
+		$("#comment-form").append('<form class="commentable"><input type="text" class="comment-field"></form>');
+		$("#comment-form").append('<button id="button-post">Post</button>');
+
+		$("#button-post").on('click', function() {
+			$("#comment-form").detach();
+			$("#comment-area").append('<div id="comment-complete">');
+			$("#comment-complete").append('<div id="reply-link">');
+
+
+			$("#reply-link").on('click', function() {
+				$("#comment-complete").detach();
+				$("#comment-area").append('<div id="comment-reply-field">');
+	  	    })
+	    })
+
+	});
+
+	$("#rectangle3").on('click', function() {
+		$("#layer-highlight").detach();
+		$("#comment-form").detach();
+		$("#comment-complete").detach();
+		$("#comment-reply-field").detach();
+		$( "#comment-area" ).append('<div id="layer-highlight">');
+		$( "#layer-highlight" ).append('<div id="comment-complete2">');
+		$("#comment-complete2").append('<div id="reply-link">');
+		$("#comment-complete2").append('<img id="later-layers" src="img/later-layers.png">')
+
+		$("#reply-link").on('click', function() {
+			$("#comment-complete2").detach();
+			$("#layer-highlight").append('<div id="comment-reply-field2">');
+			$("#layer-highlight").append('<img id="later-layers2" src="img/later-layers.png">')
+  	    })
+	});
+
+	$("#comment-bubble").on('click', function() {
+		$("#layer-highlight").detach();
+		$("#comment-form").detach();
+		$("#comment-complete").detach();
+		$("#comment-reply-field").detach();
+		$( "#comment-area" ).append('<div id="layer-highlight">');
+		$( "#layer-highlight" ).append('<div id="comment-complete2">');
+		$("#comment-complete2").append('<div id="reply-link">');
+		$("#comment-complete2").append('<img id="later-layers" src="img/later-layers.png">')
+
+		$("#reply-link").on('click', function() {
+			$("#comment-complete2").detach();
+			$("#layer-highlight").append('<div id="comment-reply-field2">');
+  	    })
+	});
+
+</script>
+
+
+</html>
